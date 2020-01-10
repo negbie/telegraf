@@ -11,8 +11,7 @@ import (
 	_ "github.com/negbie/telegraf/plugins/inputs/redis"
 	_ "github.com/negbie/telegraf/plugins/inputs/snmp"
 	_ "github.com/negbie/telegraf/plugins/inputs/snmp_trap"
+	_ "github.com/negbie/telegraf/plugins/inputs/socket_listener"
 	_ "github.com/negbie/telegraf/plugins/inputs/system"
 	_ "github.com/negbie/telegraf/plugins/inputs/tail"
-	_ "github.com/negbie/telegraf/plugins/inputs/tcp_listener"
-	_ "github.com/negbie/telegraf/plugins/inputs/udp_listener"
 )
