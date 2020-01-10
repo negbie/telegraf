@@ -3,7 +3,7 @@ package prometheus
 import (
 	"testing"
 
-	"github.com/influxdata/telegraf/testutil"
+	"github.com/negbie/telegraf/testutil"
 	"github.com/stretchr/testify/assert"
 
 	v1 "github.com/ericchiang/k8s/apis/core/v1"

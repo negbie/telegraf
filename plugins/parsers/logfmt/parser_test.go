@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/metric"
-	"github.com/influxdata/telegraf/testutil"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/metric"
+	"github.com/negbie/telegraf/testutil"
 )
 
 func MustMetric(t *testing.T, m *testutil.Metric) telegraf.Metric {

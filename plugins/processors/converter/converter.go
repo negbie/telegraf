@@ -6,9 +6,9 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/filter"
-	"github.com/influxdata/telegraf/plugins/processors"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/filter"
+	"github.com/negbie/telegraf/plugins/processors"
 )
 
 var sampleConfig = `

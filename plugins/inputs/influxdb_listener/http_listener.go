@@ -13,12 +13,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	tlsint "github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/inputs"
-	"github.com/influxdata/telegraf/plugins/parsers/influx"
-	"github.com/influxdata/telegraf/selfstat"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/internal"
+	tlsint "github.com/negbie/telegraf/internal/tls"
+	"github.com/negbie/telegraf/plugins/inputs"
+	"github.com/negbie/telegraf/plugins/parsers/influx"
+	"github.com/negbie/telegraf/selfstat"
 )
 
 const (

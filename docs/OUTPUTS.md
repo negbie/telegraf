@@ -10,7 +10,7 @@ similar constructs.
 - Outputs should call `outputs.Add` in their `init` function to register
   themselves.  See below for a quick example.
 - To be available within Telegraf itself, plugins must add themselves to the
-  `github.com/influxdata/telegraf/plugins/outputs/all/all.go` file.
+  `github.com/negbie/telegraf/plugins/outputs/all/all.go` file.
 - The `SampleConfig` function should return valid toml that describes how the
   plugin can be configured. This is included in `telegraf config`.  Please
   consult the [SampleConfig][] page for the latest style guidelines.
@@ -25,8 +25,8 @@ package simpleoutput
 // simpleoutput.go
 
 import (
-    "github.com/influxdata/telegraf"
-    "github.com/influxdata/telegraf/plugins/outputs"
+    "github.com/negbie/telegraf"
+    "github.com/negbie/telegraf/plugins/outputs"
 )
 
 type Simple struct {
@@ -90,12 +90,12 @@ You should also add the following to your `SampleConfig()`:
   ## Data format to output.
   ## Each data format has its own unique set of configuration options, read
   ## more about them here:
-  ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md
+  ## https://github.com/negbie/telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md
   data_format = "influx"
 ```
 
-[file]: https://github.com/influxdata/telegraf/tree/master/plugins/inputs/file
-[output data formats]: https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md
-[SampleConfig]: https://github.com/influxdata/telegraf/wiki/SampleConfig
-[CodeStyle]: https://github.com/influxdata/telegraf/wiki/CodeStyle
-[telegraf.Output]: https://godoc.org/github.com/influxdata/telegraf#Output
+[file]: https://github.com/negbie/telegraf/tree/master/plugins/inputs/file
+[output data formats]: https://github.com/negbie/telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md
+[SampleConfig]: https://github.com/negbie/telegraf/wiki/SampleConfig
+[CodeStyle]: https://github.com/negbie/telegraf/wiki/CodeStyle
+[telegraf.Output]: https://godoc.org/github.com/negbie/telegraf#Output

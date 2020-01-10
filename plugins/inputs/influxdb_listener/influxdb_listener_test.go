@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/plugins/parsers/influx"
-	"github.com/influxdata/telegraf/selfstat"
-	"github.com/influxdata/telegraf/testutil"
+	"github.com/negbie/telegraf/internal"
+	"github.com/negbie/telegraf/plugins/parsers/influx"
+	"github.com/negbie/telegraf/selfstat"
+	"github.com/negbie/telegraf/testutil"
 )
 
 // newListener is the minimal HTTPListener construction to serve writes.

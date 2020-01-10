@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/influxdata/telegraf/plugins/parsers/influx"
+	"github.com/negbie/telegraf/plugins/parsers/influx"
 	"github.com/stretchr/testify/require"
 )
 

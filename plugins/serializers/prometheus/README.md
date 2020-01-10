@@ -31,7 +31,7 @@ use only the `prometheus_client` output.
   ## Data format to output.
   ## Each data format has its own unique set of configuration options, read
   ## more about them here:
-  ##   https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
+  ##   https://github.com/negbie/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
   data_format = "prometheus"
 ```
 

@@ -4,15 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/serializers/carbon2"
-	"github.com/influxdata/telegraf/plugins/serializers/graphite"
-	"github.com/influxdata/telegraf/plugins/serializers/influx"
-	"github.com/influxdata/telegraf/plugins/serializers/json"
-	"github.com/influxdata/telegraf/plugins/serializers/nowmetric"
-	"github.com/influxdata/telegraf/plugins/serializers/prometheus"
-	"github.com/influxdata/telegraf/plugins/serializers/splunkmetric"
-	"github.com/influxdata/telegraf/plugins/serializers/wavefront"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/plugins/serializers/influx"
+	"github.com/negbie/telegraf/plugins/serializers/json"
+	"github.com/negbie/telegraf/plugins/serializers/prometheus"
 )
 
 // SerializerOutput is an interface for output plugins that are able to
@@ -48,9 +43,6 @@ type Config struct {
 	// Dataformat can be one of the serializer types listed in NewSerializer.
 	DataFormat string `toml:"data_format"`
 
-	// Support tags in graphite protocol
-	GraphiteTagSupport bool `toml:"graphite_tag_support"`
-
 	// Maximum line length in bytes; influx format only
 	InfluxMaxLineBytes int `toml:"influx_max_line_bytes"`
 
@@ -74,16 +66,6 @@ type Config struct {
 	// Include HEC routing fields for splunkmetric output
 	HecRouting bool `toml:"hec_routing"`
 
-	// Enable Splunk MultiMetric output (Splunk 8.0+)
-	SplunkmetricMultiMetric bool `toml:"splunkmetric_multi_metric"`
-
-	// Point tags to use as the source name for Wavefront (if none found, host will be used).
-	WavefrontSourceOverride []string `toml:"wavefront_source_override"`
-
-	// Use Strict rules to sanitize metric and tag names from invalid characters for Wavefront
-	// When enabled forward slash (/) and comma (,) will be accepted
-	WavefrontUseStrict bool `toml:"wavefront_use_strict"`
-
 	// Include the metric timestamp on each sample.
 	PrometheusExportTimestamp bool `toml:"prometheus_export_timestamp"`
 
@@ -103,18 +85,8 @@ func NewSerializer(config *Config) (Serializer, error) {
 	switch config.DataFormat {
 	case "influx":
 		serializer, err = NewInfluxSerializerConfig(config)
-	case "graphite":
-		serializer, err = NewGraphiteSerializer(config.Prefix, config.Template, config.GraphiteTagSupport)
 	case "json":
 		serializer, err = NewJsonSerializer(config.TimestampUnits)
-	case "splunkmetric":
-		serializer, err = NewSplunkmetricSerializer(config.HecRouting, config.SplunkmetricMultiMetric)
-	case "nowmetric":
-		serializer, err = NewNowSerializer()
-	case "carbon2":
-		serializer, err = NewCarbon2Serializer()
-	case "wavefront":
-		serializer, err = NewWavefrontSerializer(config.Prefix, config.WavefrontUseStrict, config.WavefrontSourceOverride)
 	case "prometheus":
 		serializer, err = NewPrometheusSerializer(config)
 	default:
@@ -146,24 +118,8 @@ func NewPrometheusSerializer(config *Config) (Serializer, error) {
 	})
 }
 
-func NewWavefrontSerializer(prefix string, useStrict bool, sourceOverride []string) (Serializer, error) {
-	return wavefront.NewSerializer(prefix, useStrict, sourceOverride)
-}
-
 func NewJsonSerializer(timestampUnits time.Duration) (Serializer, error) {
 	return json.NewSerializer(timestampUnits)
-}
-
-func NewCarbon2Serializer() (Serializer, error) {
-	return carbon2.NewSerializer()
-}
-
-func NewSplunkmetricSerializer(splunkmetric_hec_routing bool, splunkmetric_multimetric bool) (Serializer, error) {
-	return splunkmetric.NewSerializer(splunkmetric_hec_routing, splunkmetric_multimetric)
-}
-
-func NewNowSerializer() (Serializer, error) {
-	return nowmetric.NewSerializer()
 }
 
 func NewInfluxSerializerConfig(config *Config) (Serializer, error) {
@@ -186,12 +142,4 @@ func NewInfluxSerializerConfig(config *Config) (Serializer, error) {
 
 func NewInfluxSerializer() (Serializer, error) {
 	return influx.NewSerializer(), nil
-}
-
-func NewGraphiteSerializer(prefix, template string, tag_support bool) (Serializer, error) {
-	return &graphite.GraphiteSerializer{
-		Prefix:     prefix,
-		Template:   template,
-		TagSupport: tag_support,
-	}, nil
 }

@@ -3,10 +3,10 @@ package printer
 import (
 	"fmt"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/processors"
-	"github.com/influxdata/telegraf/plugins/serializers"
-	"github.com/influxdata/telegraf/plugins/serializers/influx"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/plugins/processors"
+	"github.com/negbie/telegraf/plugins/serializers"
+	"github.com/negbie/telegraf/plugins/serializers/influx"
 )
 
 type Printer struct {

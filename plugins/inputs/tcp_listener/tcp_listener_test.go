@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/influxdata/telegraf/plugins/parsers"
-	"github.com/influxdata/telegraf/testutil"
+	"github.com/negbie/telegraf/plugins/parsers"
+	"github.com/negbie/telegraf/testutil"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -9,10 +9,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/filter"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/metric"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/filter"
+	"github.com/negbie/telegraf/internal"
+	"github.com/negbie/telegraf/metric"
 	"github.com/tidwall/gjson"
 )
 

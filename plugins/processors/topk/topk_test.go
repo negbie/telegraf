@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/testutil"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/internal"
+	"github.com/negbie/telegraf/testutil"
 )
 
 // Key, value pair that represents a telegraf.Metric Field

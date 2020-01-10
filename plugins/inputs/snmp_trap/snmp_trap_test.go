@@ -10,9 +10,9 @@ import (
 
 	"github.com/soniah/gosnmp"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/testutil"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/internal"
+	"github.com/negbie/telegraf/testutil"
 
 	"github.com/stretchr/testify/require"
 )

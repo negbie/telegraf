@@ -3,7 +3,7 @@ package prometheus
 import (
 	"bytes"
 
-	"github.com/influxdata/telegraf"
+	"github.com/negbie/telegraf"
 	"github.com/prometheus/common/expfmt"
 )
 

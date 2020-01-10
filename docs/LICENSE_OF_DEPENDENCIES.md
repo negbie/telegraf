@@ -63,7 +63,7 @@ following works:
 - github.com/influxdata/tail [MIT License](https://github.com/influxdata/tail/blob/master/LICENSE.txt)
 - github.com/influxdata/toml [MIT License](https://github.com/influxdata/toml/blob/master/LICENSE)
 - github.com/influxdata/wlog [MIT License](https://github.com/influxdata/wlog/blob/master/LICENSE)
-- github.com/jackc/pgx [MIT License](https://github.com/jackc/pgx/blob/master/LICENSE)
+- github.com/jackc/pgx/v4 [MIT License](https://github.com/jackc/pgx/v4/blob/master/LICENSE)
 - github.com/jmespath/go-jmespath [Apache License 2.0](https://github.com/jmespath/go-jmespath/blob/master/LICENSE)
 - github.com/kardianos/osext [BSD 3-Clause "New" or "Revised" License](https://github.com/kardianos/osext/blob/master/LICENSE)
 - github.com/kardianos/service [zlib License](https://github.com/kardianos/service/blob/master/LICENSE)

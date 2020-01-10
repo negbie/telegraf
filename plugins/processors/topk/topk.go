@@ -7,11 +7,11 @@ import (
 	"sort"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/filter"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/metric"
-	"github.com/influxdata/telegraf/plugins/processors"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/filter"
+	"github.com/negbie/telegraf/internal"
+	"github.com/negbie/telegraf/metric"
+	"github.com/negbie/telegraf/plugins/processors"
 )
 
 type TopK struct {

@@ -62,7 +62,7 @@ You can use the following techniques to avoid cardinality issues:
 - Consult the [InfluxDB documentation][influx docs] for the most up-to-date techniques.
 
 [series cardinality]: https://docs.influxdata.com/influxdb/v1.7/concepts/glossary/#series-cardinality
-[metric filtering]: https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#metric-filtering
+[metric filtering]: https://github.com/negbie/telegraf/blob/master/docs/CONFIGURATION.md#metric-filtering
 [retention policy]: https://docs.influxdata.com/influxdb/latest/guides/downsampling_and_retention/
 [max-series-per-database]: https://docs.influxdata.com/influxdb/latest/administration/config/#max-series-per-database-1000000
 [max-values-per-tag]: https://docs.influxdata.com/influxdb/latest/administration/config/#max-values-per-tag-100000
@@ -73,4 +73,4 @@ You can use the following techniques to avoid cardinality issues:
 ### Q: When will the next version be released?
 
 The latest release date estimate can be viewed on the
-[milestones](https://github.com/influxdata/telegraf/milestones) page.
+[milestones](https://github.com/negbie/telegraf/milestones) page.

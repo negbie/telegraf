@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/influxdata/telegraf"
+	"github.com/negbie/telegraf"
 )
 
 type serializer struct {

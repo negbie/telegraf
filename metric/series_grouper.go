@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/influxdata/telegraf"
+	"github.com/negbie/telegraf"
 )
 
 // NewSeriesGrouper returns a type that can be used to group fields by series

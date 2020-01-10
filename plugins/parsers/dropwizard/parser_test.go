@@ -3,8 +3,8 @@ package dropwizard
 import (
 	"testing"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/metric"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/metric"
 
 	"fmt"
 	"time"

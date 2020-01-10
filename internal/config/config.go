@@ -18,17 +18,17 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/internal/models"
-	"github.com/influxdata/telegraf/plugins/aggregators"
-	"github.com/influxdata/telegraf/plugins/inputs"
-	"github.com/influxdata/telegraf/plugins/outputs"
-	"github.com/influxdata/telegraf/plugins/parsers"
-	"github.com/influxdata/telegraf/plugins/processors"
-	"github.com/influxdata/telegraf/plugins/serializers"
 	"github.com/influxdata/toml"
 	"github.com/influxdata/toml/ast"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/internal"
+	"github.com/negbie/telegraf/internal/models"
+	"github.com/negbie/telegraf/plugins/aggregators"
+	"github.com/negbie/telegraf/plugins/inputs"
+	"github.com/negbie/telegraf/plugins/outputs"
+	"github.com/negbie/telegraf/plugins/parsers"
+	"github.com/negbie/telegraf/plugins/processors"
+	"github.com/negbie/telegraf/plugins/serializers"
 )
 
 var (
@@ -824,7 +824,7 @@ func (c *Config) LoadConfig(path string) error {
 
 // trimBOM trims the Byte-Order-Marks from the beginning of the file.
 // this is for Windows compatibility only.
-// see https://github.com/influxdata/telegraf/issues/1378
+// see https://github.com/negbie/telegraf/issues/1378
 func trimBOM(f []byte) []byte {
 	return bytes.TrimPrefix(f, []byte("\xef\xbb\xbf"))
 }
@@ -1912,18 +1912,6 @@ func buildSerializer(name string, tbl *ast.Table) (serializers.Serializer, error
 		}
 	}
 
-	if node, ok := tbl.Fields["graphite_tag_support"]; ok {
-		if kv, ok := node.(*ast.KeyValue); ok {
-			if b, ok := kv.Value.(*ast.Boolean); ok {
-				var err error
-				c.GraphiteTagSupport, err = b.Boolean()
-				if err != nil {
-					return nil, err
-				}
-			}
-		}
-	}
-
 	if node, ok := tbl.Fields["json_timestamp_units"]; ok {
 		if kv, ok := node.(*ast.KeyValue); ok {
 			if str, ok := kv.Value.(*ast.String); ok {
@@ -1936,54 +1924,6 @@ func buildSerializer(name string, tbl *ast.Table) (serializers.Serializer, error
 				nearest_exponent := int64(math.Log10(float64(timestampVal.Nanoseconds())))
 				new_nanoseconds := int64(math.Pow(10.0, float64(nearest_exponent)))
 				c.TimestampUnits = time.Duration(new_nanoseconds)
-			}
-		}
-	}
-
-	if node, ok := tbl.Fields["splunkmetric_hec_routing"]; ok {
-		if kv, ok := node.(*ast.KeyValue); ok {
-			if b, ok := kv.Value.(*ast.Boolean); ok {
-				var err error
-				c.HecRouting, err = b.Boolean()
-				if err != nil {
-					return nil, err
-				}
-			}
-		}
-	}
-
-	if node, ok := tbl.Fields["splunkmetric_multimetric"]; ok {
-		if kv, ok := node.(*ast.KeyValue); ok {
-			if b, ok := kv.Value.(*ast.Boolean); ok {
-				var err error
-				c.SplunkmetricMultiMetric, err = b.Boolean()
-				if err != nil {
-					return nil, err
-				}
-			}
-		}
-	}
-
-	if node, ok := tbl.Fields["wavefront_source_override"]; ok {
-		if kv, ok := node.(*ast.KeyValue); ok {
-			if ary, ok := kv.Value.(*ast.Array); ok {
-				for _, elem := range ary.Value {
-					if str, ok := elem.(*ast.String); ok {
-						c.WavefrontSourceOverride = append(c.WavefrontSourceOverride, str.Value)
-					}
-				}
-			}
-		}
-	}
-
-	if node, ok := tbl.Fields["wavefront_use_strict"]; ok {
-		if kv, ok := node.(*ast.KeyValue); ok {
-			if b, ok := kv.Value.(*ast.Boolean); ok {
-				var err error
-				c.WavefrontUseStrict, err = b.Boolean()
-				if err != nil {
-					return nil, err
-				}
 			}
 		}
 	}

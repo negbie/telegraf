@@ -1,8 +1,8 @@
 package pivot
 
 import (
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/processors"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/plugins/processors"
 )
 
 const (

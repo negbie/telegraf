@@ -12,9 +12,9 @@ import (
 	"time"
 
 	"github.com/go-redis/redis"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/inputs"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/internal/tls"
+	"github.com/negbie/telegraf/plugins/inputs"
 )
 
 type Redis struct {

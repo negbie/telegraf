@@ -4,8 +4,8 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/aggregators"
+	"github.com/negbie/telegraf"
+	"github.com/negbie/telegraf/plugins/aggregators"
 )
 
 // bucketTag is the tag, which contains right bucket border
