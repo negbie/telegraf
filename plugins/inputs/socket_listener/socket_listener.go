@@ -256,7 +256,7 @@ func (sl *SocketListener) SampleConfig() string {
   ## Data format to consume.
   ## Each data format has its own unique set of configuration options, read
   ## more about them here:
-  ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
+  ## https://github.com/negbie/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
   # data_format = "influx"
 
   ## Content encoding for message payloads, can be set to "gzip" to or
